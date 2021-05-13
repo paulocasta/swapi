@@ -15,11 +15,15 @@ public class SwapiService {
     private static final String VEHICLES = API_BASE + "vehicles/";
 
     public String getCategories() {
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<String> response
-                = restTemplate.getForEntity(API_BASE, String.class);
-
-        return response.getBody();
+        StringBuilder sb = new StringBuilder();
+        sb.append("people\n")
+            .append("plantes\n")
+            .append("species\n")
+            .append("starships\n")
+            .append("films\n")
+            .append("vehicles\n");
+    
+        return sb.toString();
     }
 
     public ResultPeople getPeople() {
